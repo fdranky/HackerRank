@@ -5,6 +5,7 @@ void Main()
 	
 }
 
+// Define other methods and classes here
 static int birthdayCakeCandles(int[] ar) 
 {
     var dict = new Dictionary<int, int>();
@@ -24,4 +25,3 @@ static int birthdayCakeCandles(int[] ar)
 
     return dict[max];
 }
-// Define other methods and classes here

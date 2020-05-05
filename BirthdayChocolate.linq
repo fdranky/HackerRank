@@ -8,7 +8,6 @@ void Main()
 // Define other methods and classes here
 static int birthday(List<int> s, int d, int m) 
 {
-    var differentSums = new List<int>();
     int count = 0;
     for (int i = 0; i <= s.Count - m; i++)
     {
