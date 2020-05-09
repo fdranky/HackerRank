@@ -23,3 +23,26 @@ static int getMoneySpent(int[] keyboards, int[] drives, int b)
 
     return max;
 }
+
+static int getMoneySpentFaster(int[] ks, int[] ds, int b) 
+{
+    var keyboards = ks.ToList();
+    var drives = ds.ToList();
+    keyboards.Sort();
+    drives.Sort();
+
+    var bigger = keyboards.Last() >= drives.Last() ? keyboards : drives;
+    var smaller = keyboards.Last() >= drives.Last() ? drives : keyboards;
+    int max = -1;
+    for (int i = bigger.Count - 1; i >= 0; i--) 
+    {
+        for (int j = 0; j < smaller.Count; j++)
+        {
+            int sum = bigger[i] + smaller[j];
+            if (sum > b) break;
+            if (sum <= b && sum > max) max = sum;
+        }
+    }
+
+    return max;
+}
